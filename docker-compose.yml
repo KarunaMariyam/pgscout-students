@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: pgscout_pw
+      MYSQL_DATABASE: pgscout
+    ports:
+      - "3306:3306"
+    volumes:
+      - pgscout_mysql_data:/var/lib/mysql
+      - ./backend/sql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+volumes:
+  pgscout_mysql_data:

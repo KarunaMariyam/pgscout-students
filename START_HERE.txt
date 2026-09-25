@@ -1,0 +1,8 @@
+PGScout QUICK START
+
+1. Keep your Railway MySQL service running.
+2. Make sure backend\.env has the Railway PUBLIC NETWORK DB values.
+3. Double-click RUN_PGSCOUT.bat.
+4. Wait for the browser to open at http://localhost:5173.
+
+DO NOT install Docker or MySQL locally.
