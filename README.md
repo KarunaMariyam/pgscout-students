@@ -1,65 +1,173 @@
-# PGScout — Simple Local Runner
+# PGScout Students
 
-This is the PGScout full-stack project. The normal project architecture is
-React + Node/Express + MySQL, matching the SRS.
+PGScout Students is a student-focused accommodation platform designed to make finding and exploring PGs easier for college students.
 
-## The easy way
+The platform brings accommodation discovery, filtering, student-oriented information, and interactive features together in one place.
 
-You already have Node.js installed.
+## ✨ Features
 
-1. Keep the Railway MySQL service running.
-2. Make sure `backend/.env` contains the Railway **PUBLIC NETWORK** values:
-   `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`.
-3. Double-click:
+* Browse PG and accommodation listings
+* Search and explore available properties
+* Filter accommodation options based on student preferences
+* View accommodation details and amenities
+* Student-focused user experience
+* User authentication
+* Real-time communication features
+* Backend API for handling application data
+* MySQL database integration
+* Payment integration support
+* Email-based functionality
 
-   `RUN_PGSCOUT.bat`
+## 🛠️ Tech Stack
 
-That's it.
+### Frontend
 
-The runner will:
-- install npm packages if they are missing
-- load `backend/sql/schema.sql` directly into your Railway MySQL database
-- seed the demo accounts/listings
-- start the backend on `http://localhost:4000`
-- start the frontend on `http://localhost:5173`
-- open the frontend in Chrome/Edge
+* React
+* Vite
+* JavaScript
+* CSS
 
-No Docker. No local MySQL. No MySQL command-line client.
+### Backend
 
-## If you need to set the Railway values again
+* Node.js
+* Express.js
+* Socket.IO
 
-Open:
+### Database
 
-`backend/.env`
+* MySQL
+* mysql2
 
-Use the values from Railway > MySQL > Variables / Public Network.
+### Additional Technologies
 
-Do not share `DB_PASSWORD`.
+* Axios
+* JWT authentication
+* bcryptjs
+* Nodemailer
+* Razorpay
 
-## Demo accounts
+## 📁 Project Structure
 
-Password for all demo accounts: `password123`
+```text
+pgscout/
+├── backend/
+│   ├── sql/
+│   └── src/
+│       ├── middleware/
+│       ├── routes/
+│       └── utils/
+│
+├── frontend/
+│   └── src/
+│       ├── components/
+│       └── pages/
+│
+└── README.md
+```
 
-- Seeker: `vignesh.seeker@example.com`
-- Owner: `anand.owner@example.com`
-- Owner: `blueorchid.owner@example.com`
-- Institution Admin: `institution.admin@example.com`
-- System Admin: `admin@example.com`
+## 🚀 Getting Started
 
-## Stopping the app
+### Prerequisites
 
-Double-click:
+Make sure you have the following installed:
 
-`STOP_PGSCOUT.bat`
+* Node.js
+* npm
+* MySQL
 
-or close the two PGScout terminal windows.
+### 1. Clone the repository
 
-## Important
+```bash
+git clone https://github.com/karunamariyam/pgscout-students.git
+cd pgscout-students
+```
 
-The database is still MySQL, as required by the SRS. The only thing we removed
-from your manual workflow is the need to install a MySQL client locally. The
-included `setup-db.js` uses the existing Node `mysql2` package to load the
-schema directly into Railway.
+### 2. Install frontend dependencies
 
-Razorpay, SMTP, and Cloudinary remain optional demo integrations as described
-in the original project.
+```bash
+cd frontend
+npm install
+```
+
+### 3. Install backend dependencies
+
+Open another terminal or return to the project root:
+
+```bash
+cd backend
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file inside the `backend` folder and add the required environment variables.
+
+Do **not** commit `.env` files or secret credentials to GitHub.
+
+### 5. Start the backend
+
+From the `backend` folder:
+
+```bash
+npm start
+```
+
+If the project uses a development script, you can also use:
+
+```bash
+npm run dev
+```
+
+### 6. Start the frontend
+
+From the `frontend` folder:
+
+```bash
+npm run dev
+```
+
+Vite will provide a local development URL in the terminal.
+
+## 🗄️ Database
+
+The backend uses MySQL for storing application data.
+
+SQL setup files are available in:
+
+```text
+backend/sql/
+```
+
+Configure the database connection using environment variables rather than storing credentials directly in the source code.
+
+## 🌐 Deployment
+
+The application can be deployed using cloud hosting services.
+
+For deployment, environment variables should be configured through the hosting platform and should never be committed to the repository.
+
+## ⚠️ Project Disclaimer
+
+PGScout Students is an academic/student project developed for educational and demonstration purposes.
+
+The accommodation information used for demonstration should be treated as sample/demo data unless the relevant property or organization has explicitly authorized its use.
+
+This project is not affiliated with or an official platform of any real accommodation provider unless explicitly stated.
+
+## 🔐 Security
+
+Sensitive information such as:
+
+* Database credentials
+* API keys
+* JWT secrets
+* Payment credentials
+* Email credentials
+
+must be stored in environment variables and must not be committed to the repository.
+
+## 📌 Project Status
+
+This project is currently under development.
+
+Future improvements may include additional accommodation discovery features, enhanced filtering, improved real-time functionality, and further deployment optimization.
